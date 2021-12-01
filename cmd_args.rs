@@ -19,7 +19,8 @@ fn motion(cmd: u8) {
         _ => println!("\nRobot is stopped now..."),
       }
       delay();
-      counter += 1
+      counter += 1;
+       println!("   Total meters covered: {}", counter);
       if counter == 9 {
         println!("\nSorry, but now the robot is turning of...");
         delay_2();
