@@ -31,9 +31,9 @@ fn motion(cmd: u8) {
 }
 
 fn delay() {
-   thread::sleep(Duration::from_secs(2);
+   thread::sleep(Duration::from_secs(2));
 }
 
 fn delay_2() {
-   thread::sleep(Duration::from_secs(4);
+   thread::sleep(Duration::from_secs(5));
 }
