@@ -4,8 +4,8 @@ struct Circle<'a>{
     rad: &'a f64,
 }
 
-impl Circle<'a> {
-    fn new(new_x: &'a f64, new_y: &'a f64, new_rad: &'a f64) -> Circle {
+impl<'a> Circle<'a> {
+    fn new<'a>(new_x: &'a f64, new_y: &'a f64, new_rad: &'a f64) -> Circle<'static> {
         Circle {
            x: new_x,
            y: new_y,
@@ -17,20 +17,20 @@ impl Circle<'a> {
       std::f64::consts::PI * (self.rad * self.rad)
     }
 
-    fn grow(&self, incr: &'a f64) -> Circle {
+    fn grow<'a>(&self, incr: &'a f64) -> Circle {
          Circle { x: self.x, y: self.y, rad: self.rad + icrement } 
     }
 
-    fn reset_x(&mut self, new_x: &'a 64) -> f64 {
-         self.x = new_x
+    fn reset_x<'a>(&mut self, new_x: &'a 64) -> f64 {
+         self.x: new_x
     }
 
-    fn reset_y(&mut self, new_y: &'a 64) -> f64 {
-         self.y = new_y
+    fn reset_y<'a>(&mut self, new_y: &'a 64) -> f64 {
+         self.y: new_y
     }
 
-    fn reset_rad(&mut self, radius: &'a 64) -> f64 {
-         self.rad = radius
+    fn reset_rad<'a>(&mut self, radius: &'a 64) -> f64 {
+         self.rad: radius
     }
  }
   
