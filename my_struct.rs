@@ -1,11 +1,11 @@
 //struct with tuple
-struct Color(&u8, &u8, &u8);
+struct Color<'a>(&'a u8, &'a u8, &'a u8);
 
 //traditional struct
-struct Point3D<&'a> {
-      x: &f32,
-      y: &f32,
-      z: &f32,
+struct Point3D<'a> {
+      x: &'a f32,
+      y: &'a f32,
+      z: &'a f32,
 }
 
 fn main() {
@@ -15,23 +15,23 @@ fn main() {
   let blue = 240;
   let c = Color(&red, &green, &blue);
   
-  let X = 23.45;
-  let Y = 45.76;
-  let Z = 11.09;
-  let pt = Point { x: &X, y: &Y, z: &Z, }
+  let new_x = 23.45;
+  let new_y = 45.76;
+  let new_z = 11.09;
+  let pt = Point3D { x: &new_x, y: &new_y, z: &new_z, };
   
 println!("\n++++++++++++++++++++++++++++++++++");
-println!("++++ S T R U C T  E X A M P L E +++");
+println!("+++ S T R U C T  E X A M P L E +++");
 println!("++++++++++++++++++++++++++++++++++\n");
 
 println!("   This is your created colour: ");
 println!("   red: {}, green: {}, blue: {}", c.0, c.1, c.2);
 
 println!("   And this is your created point 3D: ");
-println!("   x: {},  y: {},  z: {}", pt.x, pt.y, pt.z);
+println!("   x: {},  y: {},  z: {}", *pt.x, *pt.y, *pt.z);
 
 println!("\n++++++++++++++++++++++++++++++++++");
-println!("++++ S T R U C T  E X A M P L E +++");
+println!("+++ S T R U C T  E X A M P L E +++");
 println!("++++++++++++++++++++++++++++++++++\n");
   
 }
