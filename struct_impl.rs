@@ -14,7 +14,7 @@ impl Rectangle {
      }
 
    fn square(size: u32) -> Rectangle {
-      Retangle {
+      Rectangle {
          width: size,
          height: size,
        }
@@ -24,11 +24,11 @@ impl Rectangle {
        self.width * self.height
     }
 
-   n get_inertia(&self) -> f32 {
+   fn get_inertia(&self) -> f32 {
       let self.width = self.width as f32;
       let self.height = self.height as f32;
       let h = f32::powf(3.0, self.height);
-      (self.width * h) / 12
+      (self.width * h) / 12.0
     }
 
    fn check_width(&self) -> bool {
@@ -84,9 +84,9 @@ fn main() {
    println!("\nAnd by multiplying its base {:?} by the cubic root of its height {:?} and then \ndividing their product by 2 we get the following inertia \nin relation to an axis passing though its centroid: {:?}.", rect2.width, rect2.height, inertia2);
    wait();
    
-   println!("\n Are Rectangle 1 and Rectangle 2 equal? {:?}.", rect1.is_equal(rect2));
+   println!("\n Are Rectangle 1 and Rectangle 2 equal? {:?}.", rect1.is_equal(&rect2));
    sleep();
-   println!("\t Can Rectangle 1 hold Rectangle 2 inside itself? {:?}.", rect1.can_hold(rect2));
+   println!("\t Can Rectangle 1 hold Rectangle 2 inside itself? {:?}.", rect1.can_hold(&rect2));
    wait();
    println!("\n\nThis is the SQUARE rectangle you created: \n\t{:?}\n", rect3);
    sleep();
