@@ -7,4 +7,4 @@ as well to the authors of the following fours books:
     2) "Rust Web Programming" (by Maxwell Flitton); 
     3) "Rust Programming By Example" (by Guillaume Gomez, Antoni Boucher);
     4) "Programming Rust" (by Jim Blandy and Jason Orendorff);
-    5) "Creative Projects for Rust Programmers" (by Carlon Milanesi)
+    5) "Creative Projects for Rust Programmers" (by Carlo Milanesi)
