@@ -1,7 +1,7 @@
 # rust_codes
 Rust sample codes, enjoy them! 
 
-Big thanks to Bogdan from the Youtube Channel Let's Get Rusty, 
+Big thanks to Bogdan from the Youtube Channel "Let's Get Rusty", 
 as well to the authors of the following five great books: 
     1) "The Rust Programming Language" (by Rust developpers' team); 
     2) "Rust Web Programming" (by Maxwell Flitton); 
