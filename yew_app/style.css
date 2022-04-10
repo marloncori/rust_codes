@@ -1,0 +1,30 @@
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.container p {
+    text-align: center;
+    font-size: 130px;
+}
+
+.container button {
+    font-size: 70px;
+    background: black;
+    color: white;
+    border-radius: 7 px;
+    border: none;
+}
+
+.container button:hover {
+    background: rgb(35, 35, 35);
+    cursor: pointer;
+}
+
