@@ -63,7 +63,7 @@ impl Reactor {
         self.readable
               .entry(key)
                .or_default()
-                .push(ctx.waker().clone()));
+                .push(ctx.waker().clone());
         self.poller.modify(source, self.get_interest(key))
                .unwrap_or_else(
                  |err| {
@@ -77,7 +77,7 @@ impl Reactor {
         self.writable
               .entry(key)
                .or_default()
-                .push(ctx.waker().clone()));
+                .push(ctx.waker().clone());
         self.poller.modify(source, self.get_interest(key))
                .unwrap_or_else(
                  |err| {
@@ -86,7 +86,7 @@ impl Reactor {
                  });
     }
 
-    pub fn drain_wakers(&mut self, events: Vec<Event> -> Vec<Waker> {
+    pub fn drain_wakers(&mut self, events: Vec<Event>) -> Vec<Waker> {
          let mut wakers = Vec::new();
          for event in events {
             if let Some(_, readers) = self.readable.remove_entry(&event.key) {
