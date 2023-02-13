@@ -103,7 +103,7 @@ impl Reactor {
          wakers
     }
   
-    pun fn wait(&self, events: &mut Vec<Event>, timeout: Option<Duration>) -> Result<usize> {
+    pub fn wait(&self, events: &mut Vec<Event>, timeout: Option<Duration>) -> Result<usize> {
        REACTOR.with(|current| -> Result<()> {
             let mut events = Vec::new();
             {
