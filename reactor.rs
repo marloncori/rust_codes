@@ -103,7 +103,11 @@ impl Reactor {
          wakers
     }
   
-    pub fn wait(&self, events: &mut Vec<Event>, timeout: Option<Duration>) -> Result<usize> {
+    pub fn wait(&self, event: &mut Vec<Event>, timeout: Option<Duration>) -> Result<usize> {
+        self.poller.wait(events, timeout);
+    }
+    
+    pub fn wait_again(&self, events: &mut Vec<Event>, timeout: Option<Duration>) -> Result<usize> {
        REACTOR.with(|current| -> Result<()> {
             let mut events = Vec::new();
             {
@@ -123,5 +127,8 @@ impl Reactor {
        )        
     }
      
+    pub fn waiting_on_events(&self) -> bool {
+        !self.readable.is_empty() || !self.writable.is_empty()
+    }
 }
 // impl
